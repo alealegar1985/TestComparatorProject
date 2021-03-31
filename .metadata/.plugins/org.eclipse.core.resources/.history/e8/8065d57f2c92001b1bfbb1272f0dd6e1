@@ -1,0 +1,15 @@
+package gara.test;
+
+import java.util.Comparator;
+import gara.test.EventBean;
+
+public class DateTimeStatusComparator<EventBean> implements Comparator<EventBean> {
+
+	public int compare(EventBean el, EventBean el1) {
+		// TODO Auto-generated method stub
+		if(el.)
+		
+		return 0;
+	}
+
+}

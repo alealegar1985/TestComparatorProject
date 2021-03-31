@@ -1,0 +1,7 @@
+package gara.test;
+
+import java.util.Comparator;
+
+public class DateTimeStatusComparator<EventBean> implements Comparator<EventBean> {
+
+}

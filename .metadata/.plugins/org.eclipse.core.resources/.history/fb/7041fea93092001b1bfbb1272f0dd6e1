@@ -1,0 +1,35 @@
+package gara.test;
+
+import java.util.ArrayList;
+
+import gara.test.EventBean.Status;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        ArrayList<EventBean> list = new ArrayList<EventBean>();
+        list.add(new EventBean(Status.DONE,null));
+        list.add(new EventBean(Status.UNDONE,null));
+        list.add(new EventBean(Status.DONE,null));
+        list.add(new EventBean(Status.UNDONE,null));
+        list.add(new EventBean(Status.DONE,null));
+        list.add(new EventBean(Status.CANCELED,null));
+        list.add(new EventBean(Status.DONE,null));
+        list.add(new EventBean(Status.CANCELED,null));
+        list.add(new EventBean(Status.DONE,null));
+        list.add(new EventBean(Status.UNDONE,null));
+        list.add(new EventBean(Status.DONE,null));
+        list.forEach((e) -> System.out.println(e)); 
+        list.sort(new DateTimeStatusComparator());
+        System.out.println("Post compare");
+        list.forEach((e) -> System.out.println(e)); 
+ 
+        
+        
+    }
+}

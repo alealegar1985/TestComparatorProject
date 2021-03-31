@@ -1,0 +1,46 @@
+package gara.test;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
+import gara.test.EventBean.Status;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        ArrayList<EventBean> list = new ArrayList<EventBean>();
+        list.add(new EventBean(Status.DONE,parseDate("2021-03-31 11:32:45")));
+        list.add(new EventBean(Status.UNDONE,null));
+        list.add(new EventBean(Status.DONE,null));
+        list.add(new EventBean(Status.UNDONE,null));
+        list.add(new EventBean(Status.DONE,null));
+        list.add(new EventBean(Status.CANCELED,null));
+        list.add(new EventBean(Status.DONE,null));
+        list.add(new EventBean(Status.CANCELED,null));
+        list.add(new EventBean(Status.DONE,null));
+        list.add(new EventBean(Status.UNDONE,null));
+        list.add(new EventBean(Status.DONE,null));
+        list.forEach((e) -> System.out.println(e)); 
+        list.sort(new DateTimeStatusComparator());
+        System.out.println("Post compare");
+        list.forEach((e) -> System.out.println(e)); 
+ 
+        
+        
+    }
+    
+    public static Date parseDate(String date) {
+        try {
+            return new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(date);
+        } catch (ParseException e) {
+            return null;
+        }
+     }
+}

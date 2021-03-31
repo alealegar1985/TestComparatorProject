@@ -1,0 +1,26 @@
+package gara.test;
+
+import java.util.Date;
+
+public class EventBean {
+
+
+
+	private Date eventDate;
+	private Date eventStatus;
+	private enum Status {DONE, UNDONE, CANCELED};
+	
+	public EventBean(Date eventDate, Status status) {
+		super();
+		this.eventDate = eventDate;
+		this.
+	}
+	
+	public Date getEventDate() {
+		return eventDate;
+	}
+	public void setEventDate(Date eventDate) {
+		this.eventDate = eventDate;
+	}
+	
+}
